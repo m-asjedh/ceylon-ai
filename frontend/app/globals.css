@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #fff8f3;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --border: rgba(0, 0, 0, 0.08);
+  --text: #111827;
+  --text-muted: #6b7280;
+  --accent: #1a1a1a;
+  --accent-hover: #333333;
+  --accent-warm: #fb923c;
+  --user-msg: #ffe4d6;
+  --assistant-msg: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --nav: #1a1a1a;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-warm: var(--accent-warm);
+  --font-sans: var(--font-dm-sans);
+  --font-serif: var(--font-fraunces);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+.font-serif {
+  font-family: var(--font-fraunces), Georgia, serif;
+}
+
+.app-shell,
+.warm-gradient-bg {
+  background:
+    radial-gradient(ellipse 60% 40% at 100% 0%, #fff5eb 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 0% 100%, #ffd6e8 0%, transparent 45%),
+    var(--bg);
+}
+
+.warm-grid {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 60% at 15% 85%, black 20%, transparent 70%);
+  pointer-events: none;
+}
+
+.prompt-chip {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.prompt-chip:hover {
+  border-color: var(--accent-warm);
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+.chat-input-shadow {
+  box-shadow: 0 4px 24px var(--shadow);
+}
+
+/* Landing page */
+.landing-page {
+  color: var(--text);
+  background: #ffffff;
+}
+
+.hero-frame {
+  position: relative;
+  border-radius: 2rem;
+  background:
+    radial-gradient(ellipse 90% 70% at 15% 55%, #ffe8d6 0%, transparent 55%),
+    radial-gradient(ellipse 85% 65% at 85% 45%, #ffd6e8 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 50% 100%, #fff0e8 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 50% 20%, #ffffff 0%, transparent 60%),
+    linear-gradient(160deg, #fffbf7 0%, #ffe4d6 40%, #ffd0e8 75%, #f5e8ff 100%);
+}
+
+@media (min-width: 640px) {
+  .hero-frame {
+    border-radius: 2.5rem;
+  }
+}
+
+.hero-frame-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image:
+    radial-gradient(ellipse 55% 45% at 8% 92%, black 15%, transparent 70%),
+    radial-gradient(ellipse 45% 40% at 92% 88%, black 10%, transparent 65%);
+  mask-composite: add;
+  pointer-events: none;
+}
+
+.landing-nav-pill {
+  background: var(--nav);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.landing-badge {
+  border: 1px solid #e5e7eb;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+}
+
+.landing-cta {
+  background: #ffffff;
+  color: var(--text);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.landing-cta:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.landing-dashboard-peek {
+  height: clamp(200px, 36vh, 440px);
+  box-shadow:
+    0 -8px 40px rgba(0, 0, 0, 0.06),
+    0 20px 50px -12px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 640px) {
+  .landing-dashboard-peek {
+    height: clamp(260px, 40vh, 480px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .landing-dashboard-peek {
+    height: clamp(300px, 42vh, 520px);
+  }
+}
+
+.about-feature-panel {
+  background:
+    radial-gradient(ellipse 80% 60% at 90% 20%, rgba(251, 146, 60, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 10% 80%, rgba(255, 182, 193, 0.25) 0%, transparent 50%),
+    linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 45%, #1f1a1c 100%);
+}
+
+.about-feature-glow {
+  position: absolute;
+  right: -20%;
+  top: -10%;
+  height: 280px;
+  width: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(251, 146, 60, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.about-feature-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 80% 70% at 70% 30%, black 20%, transparent 75%);
+  pointer-events: none;
+}
