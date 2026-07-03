@@ -51,14 +51,12 @@ npm run dev
 |----------|-------|
 | `NEXT_PUBLIC_API_URL` | Your Railway backend URL |
 
-**Railway (backend)** — set **Root Directory** to `backend` (not the repo root).
+**Railway (backend)** — only two settings needed:
 
-In Railway → Service → **Settings**:
-- **Root Directory:** `backend`
-- **Build Command:** leave empty (uses `nixpacks.toml` / `railway.json`) or `npm ci --include=dev && npm run build`
-- **Start Command:** leave empty or `npm run start:prod`
+1. **Root Directory:** `backend`
+2. **Custom Build / Start commands:** leave **empty** (Railway auto-runs `npm run build` then `npm start`)
 
-Remove any old commands like `npm run build --workspace=backend`.
+Railway reads `backend/package.json` — no Docker, no `railway.json`, no `nixpacks.toml`.
 
 Add env vars from `backend/.env.example`. Set `FRONTEND_URL` to your Vercel URL.
 
