@@ -8,7 +8,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#features", label: "Features" },
-  { href: "/signup", label: "Get Started" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 export function Navbar() {

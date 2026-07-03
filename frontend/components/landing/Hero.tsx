@@ -80,6 +80,7 @@ export function Hero() {
               width={1440}
               height={900}
               priority
+              unoptimized
               className="h-auto w-full"
               sizes="(max-width: 1024px) 92vw, 1024px"
             />

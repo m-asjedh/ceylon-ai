@@ -1,6 +1,12 @@
 import { Hero } from "@/components/landing/Hero";
 import { LogoCloud } from "@/components/landing/LogoCloud";
 import { About } from "@/components/landing/About";
+import { Features } from "@/components/landing/Features";
+import { HowItWorks } from "@/components/landing/HowItWorks";
+import { UseCases } from "@/components/landing/UseCases";
+import { FAQ } from "@/components/landing/FAQ";
+import { CTA } from "@/components/landing/CTA";
+import { Footer } from "@/components/landing/Footer";
 
 export default function Home() {
   return (
@@ -9,10 +15,13 @@ export default function Home() {
         <Hero />
         <LogoCloud />
         <About />
+        <Features />
+        <HowItWorks />
+        <UseCases />
+        <FAQ />
+        <CTA />
       </main>
-      <footer className="border-t border-black/[0.06] py-8 text-center text-sm text-[#9ca3af]">
-        <p>&copy; {new Date().getFullYear()} Ceylon AI. Built in Sri Lanka.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

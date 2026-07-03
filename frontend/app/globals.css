@@ -188,3 +188,11 @@ body {
   mask-image: radial-gradient(ellipse 80% 70% at 70% 30%, black 20%, transparent 75%);
   pointer-events: none;
 }
+
+.cta-frame {
+  background:
+    radial-gradient(ellipse 90% 70% at 15% 55%, #ffe8d6 0%, transparent 55%),
+    radial-gradient(ellipse 85% 65% at 85% 45%, #ffd6e8 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 50% 100%, #fff0e8 0%, transparent 50%),
+    linear-gradient(160deg, #fffbf7 0%, #ffe4d6 40%, #ffd0e8 75%, #f5e8ff 100%);
+}
